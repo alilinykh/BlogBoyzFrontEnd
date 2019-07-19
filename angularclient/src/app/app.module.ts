@@ -7,6 +7,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import {PostFormComponent} from "./post-form/post-form.component";
 import {FormsModule} from "@angular/forms";
 import {PostService} from "./service/post-service";
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {PostService} from "./service/post-service";
     AppComponent,
     PostListComponent,
     PostFormComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,

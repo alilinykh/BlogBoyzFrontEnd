@@ -21,7 +21,6 @@ export class PostFormComponent {
 
   async onSubmit() {
     this.post.date = new Date().toLocaleString()
-    console.log();
     await this.postService.save(this.post).then( ()=> console.log("success"));
 
     this.sendEmit()
