@@ -73,6 +73,7 @@ export class AppComponent {
         this.showSignInModal = true;
       } else {
         this.loginBtn = "Login"
+        this.showSignInModal =false
         this.userLoggedInFlag = false
       }
   }

@@ -43,7 +43,7 @@
     <input class="form-control mr-sm-2 loginField" type="search"  placeholder="Username" [(ngModel)]="loginUser.name">
     <input class="form-control mr-sm-2 loginField" type="password" placeholder="Password" [(ngModel)]="loginUser.password">
     <button class="btn btn-outline-success my-2 my-sm-0" id="submitLoginBtn" type="submit" (click)= authUser(loginUser.name) (keyup.enter)="authUser(loginUser.name)">Submit</button>
-    <button class="btn btn-outline-danger my-2 my-sm-0" id="exitLoginBtn" type="submit" (click)=changeDisplayLogin() (keyup.escape)="changeDisplayLogin()">Exit</button>
+    <button class="btn btn-outline-danger my-2 my-sm-0" id="exitLoginBtn" type="submit" (click)=changeDisplayLogin()>Exit</button>
   </div>
 
 </div>
