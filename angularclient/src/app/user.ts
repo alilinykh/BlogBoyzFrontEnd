@@ -7,7 +7,7 @@ export class User {
 
 
   constructor() {
-    this.user_id = 6;
+    // this.user_id = 10;
     this.name = "";
     this.password ="";
 

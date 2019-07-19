@@ -46,6 +46,7 @@ export class AppComponent {
             this.loginBtn = "Logout";
             this.userLoggedInFlag = true;
             this.showSignInModal = false;
+            alert("Login Succes")
         } else alert("Incorrect password!");
       }
     })
@@ -79,6 +80,7 @@ export class AppComponent {
   createUser() {
     console.log("showPostForm");
     this.postService.saveUser(this.user).subscribe( ()=> console.log("success"));
+    alert("user created")
     this.changeDisplayCreateUserModal()
   }
 
