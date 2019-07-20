@@ -8,6 +8,7 @@ export class Post {
   date: string;
   tag: string;
   user_id: number
+  author: string
 
    constructor() {
       this.post_id = 1;
@@ -17,5 +18,6 @@ export class Post {
       this.date = null;
       this.tag = "OTHER"
       this.user_id = 1;
+      this.author = ""
    };
 }

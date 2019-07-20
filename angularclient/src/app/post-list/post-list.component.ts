@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Post } from '../post';
 import {PostService} from '../service/post-service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-post-list',
@@ -10,7 +11,10 @@ import {PostService} from '../service/post-service';
 export class PostListComponent implements OnInit {
   @Input() userLoggedin = false;
   @Input() showNewPost =false;
+  @Input() loggedInUser: User;
+  userName: String
   posts: Post[];
+  
 
   constructor(private postService: PostService ) {
   }
@@ -22,6 +26,8 @@ export class PostListComponent implements OnInit {
   async deletePost(id) {
    await this.postService.delete(id).then(data => {
       console.log("success")
+      console.log(this.loggedInUser.user_id);
+      console.log(id);
       this.getAllPost()
     })
   };
@@ -34,7 +40,7 @@ export class PostListComponent implements OnInit {
 
    getAllPost(){
     console.log("test")
-      this.postService.findAll().subscribe(data => {
+      this.postService.findAll().subscribe(data => {   
       this.posts = data;
     });
 
