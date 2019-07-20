@@ -29,10 +29,10 @@
       <div class="container">
         <div class="row">
           <div class="col align-self-end">
-            <footer class="blockquote-footer">Author <cite title="Source Title">{{post.date}}</cite></footer>
+            <footer class="blockquote-footer">{{post.author}} <cite title="Source Title">{{post.date}}</cite></footer>
           </div>
           <div class="col align-self-start">
-            <button *ngIf="userLoggedin" (click)="deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
+            <button *ngIf="userLoggedin && loggedInUser.user_id === post.user_id " (click)="deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
           </div>
         </div>
       </div>

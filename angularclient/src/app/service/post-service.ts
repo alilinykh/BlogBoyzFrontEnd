@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Post } from '../post';
 import { User } from '../user';
-
 import {Observable} from "rxjs";
 
 
@@ -35,7 +34,6 @@ export class PostService {
   async delete(id){
       const t = this.http.delete<Post[]>(this.usersUrl +"posts/"+ id).toPromise();
       return t
-
   }
 
   public saveUser(user: User) {
@@ -44,6 +42,10 @@ export class PostService {
 
   public getUser(name:string) {
     return this.http.get<User>(this.usersUrl  + "usersbyname/" + name);
+  }
+
+  public getUserbyID(id:number) {
+    return this.http.get<User>(this.usersUrl + "user/" + id)
   }
 
 
