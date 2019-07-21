@@ -28,6 +28,7 @@ export class PostFormComponent {
     this.post.author = this.loggedInUser.name
     this.post.user_id = this.loggedInUser.user_id
     // this.post.user_id = this.loggedInUser_Id;
+    this.showNewPost = false;
     await this.postService.save(this.post).then( ()=> console.log("success"));
   
     this.sendEmit()
