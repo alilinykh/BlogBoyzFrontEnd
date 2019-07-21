@@ -60,7 +60,7 @@ export class AppComponent {
     if (this.showPostForm ===false){
       this.showPostForm = true;}
     else this.showPostForm = false;
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
   }
 
 
