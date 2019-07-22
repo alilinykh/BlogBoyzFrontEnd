@@ -33,6 +33,7 @@ export class AppComponent {
   async authUser(name) {
      this.isSetFields = false;
       this.postService.getUser(name).subscribe(data => {
+        this.tempUser.user_id = data.user_id
         this.tempUser.name = data.name;
         this.tempUser.password = data.password;
       });
@@ -47,6 +48,7 @@ export class AppComponent {
             this.userLoggedInFlag = true;
             this.showSignInModal = false;
             alert("Login Succes")
+           
         } else alert("Incorrect password!");
       }
     })
@@ -58,7 +60,7 @@ export class AppComponent {
     if (this.showPostForm ===false){
       this.showPostForm = true;}
     else this.showPostForm = false;
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
   }
 
 
