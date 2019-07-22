@@ -13,7 +13,8 @@ export class PostService {
   test : string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'https://blogboys.herokuapp.com/';
+    // this.usersUrl = 'https://blogboys.herokuapp.com/';
+    this.usersUrl = 'http://localhost:8080/';
   }h
 
   public findAll(): Observable<Post[]> {
