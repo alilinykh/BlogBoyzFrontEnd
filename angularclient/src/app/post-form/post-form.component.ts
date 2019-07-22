@@ -27,8 +27,8 @@ export class PostFormComponent {
     this.post.date = new Date().toLocaleString()
     this.post.author = this.loggedInUser.name
     this.post.user_id = this.loggedInUser.user_id
-    // this.post.user_id = this.loggedInUser_Id;
-    this.closePostModal
+    this.showNewPost = false;
+    // this.closePostModal
     await this.postService.save(this.post).then( ()=> console.log("success"));
   
     this.sendEmit()
