@@ -15,7 +15,7 @@ export class PostService {
   constructor(private http: HttpClient) {
     // this.usersUrl = 'https://blogboys.herokuapp.com/';
     this.usersUrl = 'http://localhost:8080/';
-  }h
+  }
 
   public findAll(): Observable<Post[]> {
     return this.http.get<Post[]>(this.usersUrl+"posts");

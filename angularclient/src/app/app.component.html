@@ -15,8 +15,12 @@
   </div>
 </nav>
 
+<app-banner></app-banner>
 <app-post-form [showNewPost] = "showPostForm" [loggedInUserName]="loginUser.name" (updateList)="listComponent.getAllPost()" ></app-post-form>
 <app-post-list [userLoggedin] ="userLoggedInFlag" #listComponent></app-post-list>
+
+
+
 
 <!--CREATE USER MODAL-->
 
@@ -37,7 +41,7 @@
   <div class="modal-content">
     <h2>Login</h2>
     <input class="form-control mr-sm-2 loginField" type="search"  placeholder="Username" [(ngModel)]="loginUser.name">
-    <input class="form-control mr-sm-2 loginField" type="search" placeholder="Password" [(ngModel)]="loginUser.password">
+    <input class="form-control mr-sm-2 loginField" type="password" placeholder="Password" [(ngModel)]="loginUser.password">
     <button class="btn btn-outline-success my-2 my-sm-0" id="submitLoginBtn" type="submit" (click)= authUser(loginUser.name) (keyup.enter)="authUser(loginUser.name)">Submit</button>
     <button class="btn btn-outline-danger my-2 my-sm-0" id="exitLoginBtn" type="submit" (click)=changeDisplayLogin()>Exit</button>
   </div>
