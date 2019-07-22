@@ -18,7 +18,7 @@ export class AppComponent {
   userLoggedInFlag = false;
 
   user : User;
-  loginUser : User;
+  loginUser : User ;
   tempUser:User;
 
 
@@ -73,6 +73,8 @@ export class AppComponent {
   changeDisplayLogin() {
       if (this.showSignInModal === false && this.userLoggedInFlag === false) {
         this.showSignInModal = true;
+        this.loginUser.name = ""
+        this.loginUser.password = ""
       } else {
         this.loginBtn = "Login"
         this.showSignInModal =false
@@ -85,6 +87,8 @@ export class AppComponent {
     this.postService.saveUser(this.user).subscribe( ()=> console.log("success"));
     alert("user created")
     this.changeDisplayCreateUserModal()
+    this.user.name = ""
+    this.user.password = ""
   }
 
 
