@@ -4,6 +4,9 @@ import { PostService } from '../service/post-service';
 import { Post } from '../post';
 import { User } from '../user';
 
+import {FormsModule} from '@angular/forms';
+
+
 @Component({
   selector: 'app-post-form',
   templateUrl: './post-form.component.html',
