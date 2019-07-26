@@ -10,6 +10,7 @@ export class Post {
   tag: string;
   user_id: number
   author: string
+  comments: Comment[];
 
    constructor() {
       this.post_id = null;
