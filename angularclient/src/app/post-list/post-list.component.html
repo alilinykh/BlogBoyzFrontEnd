@@ -17,7 +17,7 @@
 <div id="card_wrapper">
 <div *ngFor="let post of posts" class="card">
   <div class="card-header title">
-    {{post.title}}
+    <h4>{{post.title}}</h4>
   </div>
   {{post.tag}}
   <div class="imgWrapper">
@@ -33,15 +33,16 @@
           </div>
           <div class="col align-self-start">
             <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id" (click)="deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
-            <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id"  type="button" (click)="toggleComments()" class="btn btn-warning btn-sm deleteBtn">Comments</button>
+            <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id"  type="button" (click)="toggleComments()" class="btn btn-info btn-sm commmentBtn">Comments</button>
           </div>
         </div>
       </div>
     </blockquote>
   </div>
-  <div *ngIf="showComment">
+  <div *ngIf="showComment" class="commentwrapper">
+    <h5>Comments</h5>
     <div *ngFor="let comment of post.comments">
-      {{comment.content}}
+      <p class="comment">-{{comment.content}}<p>
     </div>
   </div>
 </div>

@@ -46,9 +46,7 @@ export class PostListComponent implements OnInit {
   }
 
   toggleComments (num : number) {
-    console.log("post id 2 comment legnth ==" +this.posts[2].comments.length)
-    console.log(`post id 1 comment legnth ==` +this.posts[1].comments.length)
-    console.log("post id 2 comment legnth ==" +this.posts[0].comments.length)
+    console.log(this.showComment)
       if (this.showComment === false) {
         this.showComment = true;
       } else {
