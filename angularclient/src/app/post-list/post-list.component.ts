@@ -45,7 +45,7 @@ export class PostListComponent implements OnInit {
     });
   }
 
-  toggleComments (num : number) {
+  toggleComments () {
     console.log(this.showComment)
       if (this.showComment === false) {
         this.showComment = true;
