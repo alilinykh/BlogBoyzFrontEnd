@@ -47,6 +47,7 @@ export class AppComponent {
             this.loginBtn = "Logout";
             this.userLoggedInFlag = true;
             this.showSignInModal = false;
+            console.log(this.tempUser.user_id)
             alert("Login Succes")
            
         } else alert("Incorrect password!");
