@@ -22,3 +22,14 @@ img {
 .title{
   font-weight: 600;
 }
+.fixed-bottom{
+  right: auto;
+}
+
+.comment{
+  text-align: left;
+  padding-left: 10em;
+}
+.commmentBtn {
+  margin-left: 1em;
+}
