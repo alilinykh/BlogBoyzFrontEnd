@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Post } from '../post';
 import {PostService} from '../service/post-service';
+import { User } from '../user';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-post-list',
@@ -10,7 +12,11 @@ import {PostService} from '../service/post-service';
 export class PostListComponent implements OnInit {
   @Input() userLoggedin = false;
   @Input() showNewPost =false;
+  @Input() loggedInUser: User;
+  showComment = false;
+  userName: String
   posts: Post[];
+  
 
   constructor(private postService: PostService ) {
   }
@@ -34,10 +40,18 @@ export class PostListComponent implements OnInit {
 
    getAllPost(){
     console.log("test")
-      this.postService.findAll().subscribe(data => {
+      this.postService.findAll().subscribe(data => {   
       this.posts = data;
     });
+  }
 
+  toggleComments () {
+    console.log(this.showComment)
+      if (this.showComment === false) {
+        this.showComment = true;
+      } else {
+        this.showComment = false;
+      }
 
   }
 }

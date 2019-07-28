@@ -1,15 +1,13 @@
 import DateTimeFormat = Intl.DateTimeFormat;
+import {Post} from './post';
 
 export class User {
   user_id: number;
   name: string;
   password: string;
-
-
+  
   constructor() {
-    // this.user_id = 10;
     this.name = "";
     this.password ="";
-
   }
 }

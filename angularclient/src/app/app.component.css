@@ -27,4 +27,18 @@
   margin-left: 1em;
 }
 
+.loginField {
+  margin-bottom: 1em;
+}
+
+#submitLoginBtn, #submitCreateBtn {
+  margin-right: 1em;
+}
+
+.title{
+  font-family: 'Staatliches', cursive;
+  color: white;
+  margin-right: 1em;
+
+}
 

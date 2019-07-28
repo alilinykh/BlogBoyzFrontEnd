@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../service/post-service';
 import { Post } from '../post';
+import { User } from '../user';
 
 @Component({
   selector: 'app-post-form',
@@ -11,8 +12,11 @@ import { Post } from '../post';
 export class PostFormComponent {
   @Input() showNewPost: boolean;
   @Input() loggedInUserName: string = "";
+  @Input() loggedInUser_Id: number;
+  @Input() loggedInUser: User;
   @Output() updateList = new EventEmitter();
 
+  
   post: Post;
 
   constructor(private route: ActivatedRoute, private router: Router, private postService: PostService) {
@@ -21,9 +25,16 @@ export class PostFormComponent {
 
   async onSubmit() {
     this.post.date = new Date().toLocaleString()
-    await this.postService.save(this.post).then( ()=> console.log("success"));
-
+    this.post.author = this.loggedInUser.name
+    this.post.user_id = this.loggedInUser.user_id
+    this.showNewPost = false;
+    await this.postService.save(this.post).then( () => console.log("success"));
+    console.log(this.loggedInUser.user_id, this.post.user_id)
     this.sendEmit()
+  }
+
+  closePostModal() {
+    this.showNewPost = false
   }
 
   sendEmit() {

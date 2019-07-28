@@ -1,5 +1,6 @@
-<div *ngIf="showNewPost" class="postWrapper">
-  <h1 >NEW POST</h1>
+<div id="SigninModal" class="modal" *ngIf="showNewPost">
+  <div class="modal-content">
+    <h1 >NEW POST</h1>
   <div class="form-group">
     <label for="titleInput">Title</label>
       <input id="titleInput" type="text" class="form-control" [(ngModel)]="post.title"  >
@@ -40,5 +41,5 @@
   <div class="input-group-append">
     <button (click)="onSubmit()" type="button" class="btn class=btn btn-info">submit</button>
   </div>
+  </div>
 </div>
-
