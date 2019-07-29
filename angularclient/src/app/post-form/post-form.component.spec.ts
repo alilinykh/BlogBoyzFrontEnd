@@ -43,6 +43,9 @@ describe('PostFormComponent', () => {
   it('should userId undefined', function() {
     expect(component.loggedInUser_Id).toBeUndefined()
   });
+  it('Setting enabled to false disables the submit button', () => {
+    component.showNewPost = false;
+  });
 
 });
 
