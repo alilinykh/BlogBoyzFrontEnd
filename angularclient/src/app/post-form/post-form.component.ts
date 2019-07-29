@@ -15,8 +15,6 @@ export class PostFormComponent {
   @Input() loggedInUser_Id: number;
   @Input() loggedInUser: User;
   @Output() updateList = new EventEmitter();
-
-  
   post: Post;
 
   constructor(private route: ActivatedRoute, private router: Router, private postService: PostService) {
