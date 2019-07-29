@@ -5,8 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {PostService} from '../service/post-service';
 import {RouterModule} from '@angular/router';
 import {HttpClient, HttpHandler} from '@angular/common/http';
-import {Post} from '../post';
-import {post} from 'selenium-webdriver/http';
+
 
 
 

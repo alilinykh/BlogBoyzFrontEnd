@@ -8,9 +8,13 @@ import {FormsModule} from "@angular/forms";
 import {PostService} from "./service/post-service";
 import { BannerComponent } from './banner/banner.component';
 import {RouterModule} from '@angular/router';
+import {DebugElement} from '@angular/core';
+
 
 describe('AppComponent', () => {
+  let de = DebugElement;
   beforeEach(async(() => {
+
     TestBed.configureTestingModule({
       imports: [
         RouterModule.forRoot([]),
@@ -25,6 +29,7 @@ describe('AppComponent', () => {
       ],
       providers: [PostService, HttpClient, HttpHandler, HttpClientModule]
     }).compileComponents();
+
   }));
 
   it('should create the app', () => {
@@ -32,6 +37,17 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy()
   });
+//tests
+  it('should loginbtn to be Login', function() {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.loginBtn).toEqual("Login")
+  });
 
+  it('should 1', function() {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.showSignInModal = false;
+  });
 
 });
