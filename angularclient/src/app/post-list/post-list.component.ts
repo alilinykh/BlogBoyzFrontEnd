@@ -47,9 +47,10 @@ export class PostListComponent implements OnInit {
     });
   }
 
-  onSubmit(post_id : number) {
-    this.commentService.saveComment(this.comment , post_id)
-     
+  async onSubmit(post_id : number) {
+    await this.commentService.saveComment(this.comment , post_id).then( () => console.log("success"))
+    this.getAllPost();
+    this.comment.content = ""
   }
 
 }

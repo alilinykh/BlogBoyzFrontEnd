@@ -18,6 +18,7 @@ export class PostService {
 
   public findAll(): Observable<Post[]> {
     return this.http.get<Post[]>(this.rootUrl+"posts");
+    
   }
 
   public findByTag(tag : string): Observable<Post[]> {
