@@ -13,7 +13,6 @@ export class CommentService {
 
 
     toggleComments () {
-        console.log(this.showComment)
           if (this.showComment === false) {
             this.showComment = true;
           } else {
@@ -21,9 +20,11 @@ export class CommentService {
           }
       }
 
-      saveComment(comment: Comment){
-          console.log(this.rootUrl+ "comment")
-        return this.http.post<Comment>(this.rootUrl + "comment", comment).subscribe();
+      saveComment(comment: Comment, postId){
+          console.log(`content: ${comment.content}`)
+          console.log(`post id: ${postId}`)
+          console.log(this.rootUrl+ "comment/" + postId)
+        return this.http.post<Comment>(this.rootUrl + "comment/" + postId, comment).subscribe();
       }
     
 

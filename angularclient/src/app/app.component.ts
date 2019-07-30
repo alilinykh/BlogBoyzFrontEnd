@@ -47,7 +47,6 @@ export class AppComponent {
             this.loginBtn = "Logout";
             this.userLoggedInFlag = true;
             this.showSignInModal = false;
-            console.log(this.tempUser.user_id)
             alert("Login Succes")
            
         } else alert("Incorrect password!");
@@ -61,12 +60,11 @@ export class AppComponent {
     if (this.showPostForm ===false){
       this.showPostForm = true;}
     else this.showPostForm = false;
-    // window.scrollTo(0, 0)
   }
 
 
   changeDisplayCreateUserModal() {
-    if (this.showCreateUserModal ===false){
+    if (this.showCreateUserModal === false){
       this.showCreateUserModal = true;}
     else this.showCreateUserModal = false;
   }
@@ -84,7 +82,6 @@ export class AppComponent {
   }
 
   createUser() {
-    console.log("showPostForm");
     this.postService.saveUser(this.user).subscribe( ()=> console.log("success"));
     alert("user created")
     this.changeDisplayCreateUserModal()

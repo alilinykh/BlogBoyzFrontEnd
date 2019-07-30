@@ -48,9 +48,7 @@ export class PostListComponent implements OnInit {
   }
 
   onSubmit(post_id : number) {
-    this.comment.posts_post_id = post_id
-    console.log(`content: ${this.comment.content} \n post id ${this.comment.posts_post_id}`)
-    this.commentService.saveComment(this.comment)
+    this.commentService.saveComment(this.comment , post_id)
      
   }
 
