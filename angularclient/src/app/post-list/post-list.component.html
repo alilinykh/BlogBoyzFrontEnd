@@ -33,7 +33,7 @@
           </div>
           <div class="col align-self-start">
             <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id" (click)="deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
-            <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id"  type="button" (click)="commentService.toggleComments(this.post.post_id)" class="btn btn-info btn-sm commmentBtn">Comments</button>
+            <button   type="button" (click)="commentService.toggleComments(this.post.post_id)" class="btn btn-info btn-sm commmentBtn">Comments</button>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
     <div *ngFor="let comment of post.comments">
       <p class="comment">-{{comment.content}}<p>
     </div>
-    <div class="commentFormWrapper">
+    <div class="commentFormWrapper" *ngIf="userLoggedin">
       <label class="form-check-label" for="comment">Make new comment!</label>
       <textarea  id="loingUserpassword"class="form-control mr-sm-2 commentField" type="text" rows="5" placeholder="Comment" [(ngModel)]="comment.content" ></textarea>
       <button class="btn btn-outline-success my-2 my-sm-0" id="submitLoginBtn" (click)="onSubmit(this.post.post_id)" type="submit" >Submit</button>
