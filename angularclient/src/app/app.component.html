@@ -31,8 +31,8 @@
     <input id="createUserName" class="form-control mr-sm-2 loginField" type="search"  placeholder="Username" [(ngModel)]="user.name">
     <label class="form-check-label" for="createUserpassword">Password</label>
     <input id="createUserpassword" class="form-control mr-sm-2 loginField" type="password" placeholder="Password" [(ngModel)]="user.password">
-    <button class="btn btn-outline-success my-2 my-sm-0" id="submitCreateBtn" type="submit" (click)= createUser() (keyup.enter)="createUser()">Submit</button>
-    <button class="btn btn-outline-danger my-2 my-sm-0" id="exitCreateBtn" type="submit" (click)=changeDisplayCreateUserModal() (keyup.escape)="changeDisplayCreateUserModal()">Exit</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" id="submitCreateBtn" type="submit" (click)= createUser() (keydown.enter)="createUser()">Submit</button>
+    <button class="btn btn-outline-danger my-2 my-sm-0" id="exitCreateBtn" type="submit" (click)=changeDisplayCreateUserModal() (keydown.esc)="changeDisplayCreateUserModal()">Exit</button>
   </div>
 
 </div>
@@ -46,8 +46,8 @@
     <input id="loginUserName"class="form-control mr-sm-2 loginField" type="search"  placeholder="Username" [(ngModel)]="loginUser.name">
     <label class="form-check-label" for="loginUserpassword">Password</label>
     <input id="loingUserpassword"class="form-control mr-sm-2 loginField" type="password" placeholder="Password" [(ngModel)]="loginUser.password">
-    <button class="btn btn-outline-success my-2 my-sm-0" id="submitLoginBtn" type="submit" (click)= authUser(loginUser.name) (keyup.enter)="authUser(loginUser.name)">Submit</button>
-    <button class="btn btn-outline-danger my-2 my-sm-0" id="exitLoginBtn" type="submit" (click)=changeDisplayLogin()>Exit</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" id="submitLoginBtn" type="submit" (click)= authUser(loginUser.name) (keydown.enter)=authUser(loginUser.name)>Submit</button>
+    <button class="btn btn-outline-danger my-2 my-sm-0" id="exitLoginBtn" type="submit" (click)=changeDisplayLogin() (keydown.esc)= changeDisplayLogin() >Exit</button>
   </div>
 
 </div>

@@ -2,7 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import { Post } from '../post';
 import {PostService} from '../service/post-service';
 import { User } from '../user';
-import { post } from 'selenium-webdriver/http';
+import { CommentService } from '../service/comment-service';
+import { Comment } from "../comment";
 
 @Component({
   selector: 'app-post-list',
@@ -13,12 +14,14 @@ export class PostListComponent implements OnInit {
   @Input() userLoggedin = false;
   @Input() showNewPost =false;
   @Input() loggedInUser: User;
-  showComment = false;
   userName: String
   posts: Post[];
+  comment: Comment;
+
   
 
-  constructor(private postService: PostService ) {
+  constructor(public postService: PostService, public commentService: CommentService  ) {
+    this.comment = new Comment();
   }
 
   ngOnInit() {
@@ -39,19 +42,15 @@ export class PostListComponent implements OnInit {
   }
 
    getAllPost(){
-    console.log("test")
       this.postService.findAll().subscribe(data => {   
       this.posts = data;
     });
   }
 
-  toggleComments () {
-    console.log(this.showComment)
-      if (this.showComment === false) {
-        this.showComment = true;
-      } else {
-        this.showComment = false;
-      }
-
+  async onSubmit(post_id : number) {
+    await this.commentService.saveComment(this.comment , post_id).then( () => console.log("success"))
+    this.getAllPost();
+    this.comment.content = ""
   }
+
 }

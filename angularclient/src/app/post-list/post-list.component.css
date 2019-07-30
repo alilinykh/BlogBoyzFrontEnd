@@ -28,8 +28,16 @@ img {
 
 .comment{
   text-align: left;
-  padding-left: 10em;
+  padding-left: 5em;
 }
 .commmentBtn {
   margin-left: 1em;
+}
+
+.commentField{
+  margin-bottom: 1em;
+  margin-top: .5em;
+}
+.commentFormWrapper{
+  text-align: center
 }
