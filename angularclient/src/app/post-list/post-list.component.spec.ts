@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostListComponent } from './post-list.component';
+import {PostService} from '../service/post-service';
+import {CommentService} from '../service/comment-service';
+import {FormsModule} from '@angular/forms';
+import {HttpClient, HttpHandler} from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;
@@ -8,10 +13,16 @@ describe('PostListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostListComponent ]
+      declarations: [ PostListComponent ],
+      imports: [FormsModule],
+      providers: [PostService, CommentService, HttpClient, HttpHandler, HttpClientTestingModule]
     })
     .compileComponents();
   }));
+
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PostListComponent);
@@ -20,6 +31,10 @@ describe('PostListComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy()
   });
+//  trying to make some simple tests to pass
+//   it('test', () => {
+//     expect(PostListComponent).toEqual('asdf')
+//   })
 });

@@ -46,7 +46,7 @@
     </div>
     <div class="commentFormWrapper" *ngIf="userLoggedin">
       <label class="form-check-label" for="comment">Make new comment!</label>
-      <textarea  id="loingUserpassword"class="form-control mr-sm-2 commentField" type="text" rows="5" placeholder="Comment" [(ngModel)]="comment.content" ></textarea>
+      <textarea  id="loingUserpassword"class="form-control mr-sm-2 commentField" id="comment" type="text" rows="5" placeholder="Comment" [(ngModel)]="comment.content" ></textarea>
       <button class="btn btn-outline-success my-2 my-sm-0" id="submitLoginBtn" (click)="onSubmit(this.post.post_id)" type="submit" >Submit</button>
     </div>
   </div>

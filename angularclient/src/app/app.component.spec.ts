@@ -1,35 +1,61 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { PostListComponent } from './post-list/post-list.component';
+import {PostFormComponent} from "./post-form/post-form.component";
+import {FormsModule} from "@angular/forms";
+import {PostService} from "./service/post-service";
+import { BannerComponent } from './banner/banner.component';
+import {RouterModule} from '@angular/router';
+import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
+import {CommentService} from './service/comment-service';
+
 
 describe('AppComponent', () => {
+  let de = DebugElement;
   beforeEach(async(() => {
+
     TestBed.configureTestingModule({
       imports: [
+        RouterModule.forRoot([]),
+        FormsModule,
+        HttpClientModule,
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        BannerComponent,
+        PostListComponent,
+        PostFormComponent
       ],
+      providers: [PostService, HttpClient, HttpHandler, CommentService],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();
+
   }));
+
+  //it help to solve problem with TypeError: _this.handler.handle is not a function error
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(app).toBeTruthy()
+  });
+//tests
+  it('should loginbtn to be Login', function() {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.loginBtn).toEqual("Login")
   });
 
-  it(`should have as title 'angularclient'`, () => {
+  it('should 1', function() {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angularclient');
+    const app = fixture.componentInstance;
+    app.showSignInModal = false;
   });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angularclient!');
-  });
 });
