@@ -4,6 +4,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <h4><a class="navbar-brand nav_title" (click)=listComponent.getAllPost() href="#" class="title">Blogboyz</a></h4>
   <button *ngIf="userLoggedInFlag" class="btn btn-secondary"(click)= "changeDisplayPostInput()" href="#">Make Post</button>
+  <div class="dropdown dropBtn ">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter By Tag
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <button class="dropdown-item" (click)="getPostByTag('SPORTS')" href="#">Sports</button>
+      <button class="dropdown-item" (click)="getPostByTag('FINANCE')" href="#">Finance</button>
+      <button class="dropdown-item" (click)="getPostByTag('TECHONLOGY')" href="#">Technology</button>
+      <button class="dropdown-item" (click)="getPostByTag('BUSINESS')" href="#">Business</button>
+      <button class="dropdown-item" (click)="getPostByTag('OTHER')" >Other</button>
+      <button class="dropdown-item" (click)="getAllPost()" >All</button>
+    </div>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

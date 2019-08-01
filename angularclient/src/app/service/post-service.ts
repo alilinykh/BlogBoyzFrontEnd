@@ -47,6 +47,4 @@ export class PostService {
   public getUserbyID(id:number) {
     return this.http.get<User>(this.rootUrl + "user/" + id)
   }
-
-
 }
