@@ -36,3 +36,7 @@ img {
 .commentFormWrapper{
   text-align: center
 }
+
+.commentAuthor{
+  text-align: left;
+}
