@@ -28,6 +28,7 @@
     <h5>Comments</h5>
     <div *ngFor="let comment of post.comments">
       <p class="comment">-{{comment.content}}<p>
+        <p class="commentAuthor">{{comment.author}}</p>
     </div>
     <div class="commentFormWrapper" *ngIf="userLoggedin">
       <label class="form-check-label" for="comment">Make new comment!</label>
