@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import {PostService} from "./service/post-service";
 import { BannerComponent } from './banner/banner.component';
 import { CommentService } from './service/comment-service';
+import { UpdateService } from './service/update-service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { CommentService } from './service/comment-service';
     FormsModule
 
   ],
-  providers: [PostService, CommentService ],
+  providers: [PostService, CommentService, UpdateService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

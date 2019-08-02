@@ -1,21 +1,6 @@
 
-  <div class="dropdown dropBtn fixed-bottom ">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Filter By Tag
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <button class="dropdown-item" (click)="getPostByTag('SPORTS')" href="#">Sports</button>
-      <button class="dropdown-item" (click)="getPostByTag('FINANCE')" href="#">Finance</button>
-      <button class="dropdown-item" (click)="getPostByTag('TECHONLOGY')" href="#">Technology</button>
-      <button class="dropdown-item" (click)="getPostByTag('BUSINESS')" href="#">Business</button>
-      <button class="dropdown-item" (click)="getPostByTag('OTHER')" >Other</button>
-      <button class="dropdown-item" (click)="getAllPost()" >All</button>
-    </div>
-  </div>
-
-
-<div id="card_wrapper">
-<div *ngFor="let post of posts" class="card">
+ <div id="card_wrapper">
+<div *ngFor="let post of updateService.posts" class="card">
   <div class="card-header title">
     <h4>{{post.title}}</h4>
   </div>
