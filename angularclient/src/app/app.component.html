@@ -32,7 +32,7 @@
 
 <app-banner></app-banner>
 <app-post-form [loggedInUser] = "tempUser" [showNewPost] = "showPostForm" [loggedInUserName]="loginUser.name" (updateList)="listComponent.getAllPost()" ></app-post-form>
-<app-post-list [loggedInUser] = "tempUser" [userLoggedin] ="userLoggedInFlag" #listComponent></app-post-list>
+<app-post-list [loggedInUser] = "tempUser" [userLoggedin] ="userLoggedInFlag" [loggedInUserName]="loginUser.name" #listComponent></app-post-list>
 
 
 

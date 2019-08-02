@@ -15,6 +15,7 @@ export class PostListComponent implements OnInit {
   @Input() userLoggedin = false;
   @Input() showNewPost =false;
   @Input() loggedInUser: User;
+  @Input() loggedInUserName: string = "";
   userName: String
   comment: Comment;
 
@@ -29,9 +30,13 @@ export class PostListComponent implements OnInit {
   }
 
   async onSubmit(post_id : number) {
+    this.comment.author=this.loggedInUserName;
+    console.log("author" + this.comment.author);
     await this.commentService.saveComment(this.comment , post_id).then( () => console.log("success"))
     this.updateService.getAllPost();
     this.comment.content = ""
+    this.loggedInUserName = "";
+
   }
 
 }
