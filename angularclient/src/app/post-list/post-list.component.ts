@@ -39,4 +39,9 @@ export class PostListComponent implements OnInit {
 
   }
 
+   getAllPost(){
+    this.postService.findAll().subscribe(data => {   
+    this.updateService.posts = data;
+  });
+}
 }

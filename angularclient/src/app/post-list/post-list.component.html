@@ -17,7 +17,7 @@
             <footer class="blockquote-footer">{{post.author}} <cite title="Source Title">{{post.date}}</cite></footer>
           </div>
           <div class="col align-self-start">
-            <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id" (click)="deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
+            <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id" (click)="updateService.deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
             <button   type="button" (click)="commentService.toggleComments(this.post.post_id)" class="btn btn-info btn-sm commmentBtn">Comments</button>
           </div>
         </div>
