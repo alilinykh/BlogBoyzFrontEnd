@@ -27,6 +27,10 @@ describe('BannerComponent', () => {
   });
   //custom tests on banner
   it('should should have h1 tag on BlogBoyz', function() {
+<<<<<<< HEAD
     expect(de.query(By.css('h1')).nativeElement.innerText).toEqual('BlogBoyZ');
+=======
+    expect(de.query(By.css('h1')).nativeElement.innerText).toBe('BlogBoyZ');
+>>>>>>> 9b192741721cda269ffb7885c188292cd2e818b1
   });
 });

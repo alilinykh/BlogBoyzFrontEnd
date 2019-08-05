@@ -8,8 +8,12 @@ import {FormsModule} from "@angular/forms";
 import {PostService} from "./service/post-service";
 import { BannerComponent } from './banner/banner.component';
 import {RouterModule} from '@angular/router';
+<<<<<<< HEAD
 import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
 import {CommentService} from './service/comment-service';
+=======
+import {DebugElement} from '@angular/core';
+>>>>>>> 9b192741721cda269ffb7885c188292cd2e818b1
 
 
 describe('AppComponent', () => {
@@ -20,7 +24,10 @@ describe('AppComponent', () => {
       imports: [
         RouterModule.forRoot([]),
         FormsModule,
+<<<<<<< HEAD
         HttpClientModule,
+=======
+>>>>>>> 9b192741721cda269ffb7885c188292cd2e818b1
         RouterTestingModule
       ],
       declarations: [
@@ -29,8 +36,12 @@ describe('AppComponent', () => {
         PostListComponent,
         PostFormComponent
       ],
+<<<<<<< HEAD
       providers: [PostService, HttpClient, HttpHandler, CommentService],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+=======
+      providers: [PostService, HttpClient, HttpHandler, HttpClientModule]
+>>>>>>> 9b192741721cda269ffb7885c188292cd2e818b1
     }).compileComponents();
 
   }));
