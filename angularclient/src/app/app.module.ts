@@ -8,7 +8,12 @@ import {PostFormComponent} from "./post-form/post-form.component";
 import {FormsModule} from "@angular/forms";
 import {PostService} from "./service/post-service";
 import { BannerComponent } from './banner/banner.component';
+<<<<<<< HEAD
 import {RouterModule} from '@angular/router';
+=======
+import { CommentService } from './service/comment-service';
+import { UpdateService } from './service/update-service';
+>>>>>>> 80b24eb67a425b007c2594cf48851fe04e9534b9
 
 
 @NgModule({
@@ -26,9 +31,14 @@ import {RouterModule} from '@angular/router';
     RouterModule.forRoot([]),
 
   ],
+<<<<<<< HEAD
   providers: [PostService ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
+=======
+  providers: [PostService, CommentService, UpdateService ],
+  bootstrap: [AppComponent]
+>>>>>>> 80b24eb67a425b007c2594cf48851fe04e9534b9
 })
 export class AppModule { }

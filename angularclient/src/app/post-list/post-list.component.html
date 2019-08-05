@@ -1,21 +1,6 @@
 
-  <div class="dropdown dropBtn fixed-bottom ">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Filter By Tag
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <button class="dropdown-item" (click)="getPostByTag('SPORTS')" href="#">Sports</button>
-      <button class="dropdown-item" (click)="getPostByTag('FINANCE')" href="#">Finance</button>
-      <button class="dropdown-item" (click)="getPostByTag('TECHONLOGY')" href="#">Technology</button>
-      <button class="dropdown-item" (click)="getPostByTag('BUSINESS')" href="#">Business</button>
-      <button class="dropdown-item" (click)="getPostByTag('OTHER')" >Other</button>
-      <button class="dropdown-item" (click)="getAllPost()" >All</button>
-    </div>
-  </div>
-
-
-<div id="card_wrapper">
-<div *ngFor="let post of posts" class="card">
+ <div id="card_wrapper">
+<div *ngFor="let post of updateService.posts" class="card">
   <div class="card-header title">
     <h4>{{post.title}}</h4>
   </div>
@@ -32,7 +17,7 @@
             <footer class="blockquote-footer">{{post.author}} <cite title="Source Title">{{post.date}}</cite></footer>
           </div>
           <div class="col align-self-start">
-            <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id" (click)="deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
+            <button *ngIf="userLoggedin && loggedInUser.user_id == post.user_id" (click)="updateService.deletePost(this.post.post_id)" type="button" class="btn btn-warning btn-sm deleteBtn">Delete</button>
             <button   type="button" (click)="commentService.toggleComments(this.post.post_id)" class="btn btn-info btn-sm commmentBtn">Comments</button>
           </div>
         </div>
@@ -43,6 +28,7 @@
     <h5>Comments</h5>
     <div *ngFor="let comment of post.comments">
       <p class="comment">-{{comment.content}}<p>
+        <p class="commentAuthor">{{comment.author}}</p>
     </div>
     <div class="commentFormWrapper" *ngIf="userLoggedin">
       <label class="form-check-label" for="comment">Make new comment!</label>

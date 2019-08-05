@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {PostService} from "./service/post-service";
 import {User} from "./user";
+import { UpdateService } from './service/update-service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent {
   tempUser:User;
 
 
-  constructor(private route: ActivatedRoute, private router: Router, private postService: PostService) {
+  constructor(private route: ActivatedRoute, private router: Router, private postService: PostService, public updateService : UpdateService) {
     this.user = new User();
     this.loginUser = new User();
     this.tempUser = new User();
