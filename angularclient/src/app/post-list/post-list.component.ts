@@ -19,7 +19,7 @@ export class PostListComponent implements OnInit {
   userName: String
   comment: Comment;
 
-  
+
 
   constructor(public postService: PostService, public commentService: CommentService, public updateService : UpdateService  ) {
     this.comment = new Comment();
@@ -40,7 +40,7 @@ export class PostListComponent implements OnInit {
   }
 
    getAllPost(){
-    this.postService.findAll().subscribe(data => {   
+    this.postService.findAll().subscribe(data => {
     this.updateService.posts = data;
   });
 }
